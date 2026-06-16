@@ -36,6 +36,27 @@ const updated = '2026-06-16';
     these areas a half zone warmer than the old 2012 map, so if you last looked up your zone a
     decade ago, it is worth checking again. You might already be in 8a and not know it.
   </p>
+
+  <figure class="zone-map">
+    <img
+      src={`${base}/zone-8a-map.svg`}
+      width="959"
+      height="593"
+      loading="lazy"
+      alt="Map of the contiguous United States with Zone 8a regions shaded. The deepest shade covers Georgia and South Carolina; a lighter shade covers North Carolina, Alabama, Mississippi, Louisiana, Arkansas, Texas, New Mexico, Arizona, California, Oregon, and Washington."
+    />
+    <figcaption>
+      <span class="legend">
+        <span class="key"><span class="swatch core"></span> Zone 8a core</span>
+        <span class="key"><span class="swatch present"></span> Where 8a also appears</span>
+      </span>
+      Approximate. Zone 8a runs in bands inside the shaded states, not edge to edge. It is
+      densest across the coastal Southeast and turns up in pockets of the Southwest and
+      Pacific Northwest, with smaller patches elsewhere. For exact boundaries, check the{' '}
+      <a href="https://planthardiness.ars.usda.gov/" target="_blank" rel="noopener noreferrer">official USDA Plant Hardiness Zone Map</a>.
+    </figcaption>
+  </figure>
+
   <p>
     If you are a zone or two off, the rotation still works. You shift the dates to your own
     frost calendar and keep the spacing intact. More on that below.
@@ -115,4 +136,39 @@ const updated = '2026-06-16';
     Built and maintained by <a href="https://blanewarrene.com">Blane Warrene</a>. The site is a
     static build; if you are curious how it is put together, there is a link in the footer.
   </p>
+
+  <style>
+    .zone-map { margin: 1.75rem 0; }
+    .zone-map img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+      display: block;
+    }
+    .zone-map figcaption {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: #6b6f63;
+      margin-top: 0.65rem;
+      line-height: 1.5;
+    }
+    .zone-map .legend {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .zone-map .key { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .zone-map .swatch {
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 2px;
+      display: inline-block;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .zone-map .swatch.core { background: #2c4d28; }
+    .zone-map .swatch.present { background: #7aa06e; }
+  </style>
 </Base>
