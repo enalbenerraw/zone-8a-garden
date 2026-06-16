@@ -19,5 +19,5 @@ A public static site (Astro) documenting one full high-rotation raised-bed seque
 ## Build and deploy
 
 - `npm run dev` / `npm run build` / `npm run preview`.
-- `.github/workflows/deploy.yml` publishes to GitHub Pages on push to `main` via `withastro/action`.
-- Deployment target is set in `astro.config.mjs`. Default assumes a project page at `https://<account>.github.io/zone-8a-garden` (`base: '/zone-8a-garden'`). For a custom domain or user/org root, set `site` and remove `base`.
+- Served by Cloudflare Pages at zone8a.com, connected via Cloudflare's Git integration (build `npm run build`, output `dist`). Pushes to `main` trigger a Cloudflare build. The site is static, so there is no adapter or `wrangler` config.
+- `astro.config.mjs` sets `site: 'https://zone8a.com'` and no `base`; pages serve from the domain root. If the domain ever changes, update `site` there.

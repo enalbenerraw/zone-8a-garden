@@ -30,11 +30,12 @@ npm run preview  # preview the production build
 
 ## Deploy
 
-A GitHub Actions workflow at `.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`.
+The site is served by **Cloudflare Pages** at [zone8a.com](https://zone8a.com), connected to this repository through Cloudflare's Git integration. Every push to `main` triggers a Cloudflare build.
 
-Before the first deploy, confirm the target in `astro.config.mjs`:
+Cloudflare project settings:
 
-- **Project page** (`https://<account>.github.io/zone-8a-garden`): keep `base: '/zone-8a-garden'` and set `site` to your `https://<account>.github.io` origin.
-- **Custom domain or user/org root**: set `site` to that origin and remove `base`.
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+- **Custom domain:** `zone8a.com`
 
-Then in the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.
+The site is static (no adapter, no `wrangler`). `astro.config.mjs` sets `site: 'https://zone8a.com'` and no `base`, so pages serve from the domain root.
