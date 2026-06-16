@@ -5,6 +5,7 @@ interface Props {
 }
 const { title, description = 'A practical Zone 8a fall and winter gardening guide.' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const CONTACT_FORM_URL = 'https://forms.gle/3kBb9hAvTVyQC96N6';
 ---
 
 <!doctype html>
@@ -28,6 +29,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </main>
     <footer>
       <p>Gardening in USDA Zone 8a. Adjust dates to your own frost calendar.</p>
+      <p class="cta">
+        Curious about the code behind this site?{' '}
+        <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer">Get in touch &rarr;</a>
+      </p>
+      <p>&copy; <a href="https://blanewarrene.com">Blane Warrene</a></p>
     </footer>
     <style is:global>
       :root {
