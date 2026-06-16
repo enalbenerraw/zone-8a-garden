@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const updated = '2026-06-16';
+---
+
+<Base
+  title="Launching Zone 8a Garden: One Bed, Three Crops, All Winter"
+  description="An executive summary of zone8a.com: a documented high-rotation raised bed that carries a Zone 8a garden from spring greens into a winter brassica harvest."
+>
+  <p><a href={`${base}/`}>&larr; Home</a></p>
+  <h1>Launching Zone 8a Garden</h1>
+  <p><em>Published {updated}</em></p>
+
+  <p>
+    <strong>Zone 8a Garden</strong> is now live at <a href="https://zone8a.com">zone8a.com</a>.
+    It documents one thing in full: a single 4x8 foot raised bed run as a relay that
+    produces three crops in one year and keeps cutting greens straight through winter.
+    No sprawling almanac, no hundred half-finished tips. One bed, one sequence,
+    start to finish, for USDA Zone 8a.
+  </p>
+
+  <h2>The idea in one paragraph</h2>
+  <p>
+    Zone 8a gives you a long shoulder season: the first hard frost holds off until
+    roughly November 10. That is enough runway to grow three crops in the same bed
+    if you treat it as a relay instead of a single planting. Spring spinach goes in
+    early and comes out by late spring. Summer bush beans follow, fixing nitrogen
+    to rebuild what the spinach drew down. Then fall and winter brassicas, broccoli,
+    cabbage, cauliflower, kale, and collards, mature into the cold, when their flavor
+    actually improves. Each handoff is deliberate. The heavy-feeding brassicas inherit
+    a bed that is ready for them rather than one that needs rescuing.
+  </p>
+
+  <h2>What the site covers</h2>
+  <p>
+    The work is split into six guides across three stages, Plan, Plant, and Protect:
+  </p>
+  <ul>
+    <li>
+      A <a href={`${base}/guides/planting-calendar/`}>master planting calendar</a> of
+      eleven crops with varieties, seed-start and sow dates, days to maturity, and
+      harvest windows, all keyed to a November 10 frost date.
+    </li>
+    <li>
+      A <a href={`${base}/guides/bed-layout/`}>polyculture bed layout</a> that stacks
+      crops in three tiers by height and light, so a 4x8 bed does the work of a larger one.
+    </li>
+    <li>
+      The <a href={`${base}/guides/succession-sequence/`}>succession and soil method</a>,
+      including the chop-and-drop handoff and the shallow manure amendment that move the
+      bed cleanly from one crop to the next.
+    </li>
+    <li>
+      An <a href={`${base}/guides/pest-management/`}>integrated pest management plan</a> for
+      the August transplant window, when brassica pests peak: row covers, a Bt spray schedule,
+      trap crops, and a homemade insecticidal soap recipe.
+    </li>
+    <li>
+      The <a href={`${base}/guides/companion-planting/`}>companion planting rules</a> that hold
+      the layout together, including the one isolation rule you cannot skip: keep fennel out
+      of the bed entirely.
+    </li>
+  </ul>
+
+  <h2>Why it is worth trusting</h2>
+  <p>
+    The planting calendar and bed layout are ported from a verified working plan. The pest
+    and soil guidance is written to be checkable: the insecticidal soap concentrations, the
+    warnings against dish-soap and home-brew sprays, and the caterpillar controls all cite
+    university extension and IPM sources directly, from Colorado State, UC IPM, Maryland,
+    Minnesota, Clemson, and Penn State. Where a procedure was reconstructed from standard
+    Zone 8a horticulture rather than a single authority, the site says so and tells you to
+    confirm product labels and local extension guidance before you spray. Nothing reconstructed
+    is dressed up as gospel.
+  </p>
+
+  <h2>Who it is for</h2>
+  <p>
+    Anyone in Zone 8a who wants a complete, opinionated rotation they can copy this season,
+    and anyone in a nearby zone who can shift the dates to their own frost calendar and keep
+    the relative spacing. The dates are the only part tied to this microclimate. Everything
+    else travels.
+  </p>
+
+  <h2>Take a look</h2>
+  <p>
+    Start with the <a href={`${base}/guides/overview/`}>overview</a>, then walk the calendar,
+    the layout, and the pest plan in order. If you run a raised bed in a cold-winter-but-mild
+    climate, the relay is built to be lifted whole.
+  </p>
+
+  <p>
+    Built and maintained by <a href="https://blanewarrene.com">Blane Warrene</a>.
+    The site is a static build; if you are curious about how it is put together,
+    there is a link in the footer.
+  </p>
+</Base>
