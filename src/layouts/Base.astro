@@ -1,0 +1,91 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'A practical Zone 8a fall and winter gardening guide.' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="brand" href={`${base}/`}>Zone 8a Garden</a>
+        <a href={`${base}/#guides`}>Guides</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Gardening in USDA Zone 8a. Adjust dates to your own frost calendar.</p>
+    </footer>
+    <style is:global>
+      :root {
+        --ink: #20281f;
+        --leaf: #3f6b3a;
+        --leaf-dark: #2c4d28;
+        --paper: #f7f6f0;
+        --line: #d9d6c6;
+        --max: 760px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: ui-serif, Georgia, 'Times New Roman', serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.6;
+      }
+      header {
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+      }
+      nav {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 1rem 1.25rem;
+        display: flex;
+        gap: 1.5rem;
+        align-items: baseline;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      nav .brand { font-weight: 700; color: var(--leaf-dark); margin-right: auto; }
+      nav a { color: var(--leaf); text-decoration: none; }
+      nav a:hover { text-decoration: underline; }
+      main { max-width: var(--max); margin: 0 auto; padding: 2.5rem 1.25rem; }
+      h1, h2, h3 { font-family: ui-sans-serif, system-ui, sans-serif; color: var(--leaf-dark); line-height: 1.25; }
+      h1 { font-size: 2rem; margin-top: 0; }
+      a { color: var(--leaf); }
+      table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.95rem; }
+      th, td { border: 1px solid var(--line); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+      th { background: #eef0e6; font-family: ui-sans-serif, system-ui, sans-serif; }
+      blockquote {
+        border-left: 4px solid var(--leaf);
+        margin: 1.5rem 0;
+        padding: 0.5rem 1rem;
+        background: #eef0e6;
+        font-style: italic;
+      }
+      footer {
+        border-top: 1px solid var(--line);
+        margin-top: 3rem;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        font-size: 0.85rem;
+        color: #6b6f63;
+      }
+    </style>
+  </body>
+</html>
