@@ -4,6 +4,7 @@ description: Eleven Zone 8a crops with varieties, seed-start and sow dates, days
 order: 2
 category: Plan
 updated: "2026-06-16"
+timeline: true
 ---
 
 Dates below are built around a **target first-frost date of November 10** and a sequential-succession bed. Shift them earlier or later to match your own frost date, but hold the relative spacing: the seed-start and transplant dates are staged so the bed never sits empty and never asks one crop to wait on another.

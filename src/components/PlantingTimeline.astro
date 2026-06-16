@@ -1,0 +1,181 @@
+---
+type Phase = 'indoors' | 'sow' | 'grow' | 'none';
+
+interface Crop {
+  name: string;
+  indoors: [number, number] | null;
+  sow: number;
+  growEnd: number;
+  overwinter?: boolean;
+  note?: string;
+}
+
+// Month axis, index 0 = June through index 9 = March.
+const MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'];
+
+// Derived from the planting calendar: when seeds start indoors, when the crop
+// goes in the ground, and how far into the cold it keeps producing.
+const crops: Crop[] = [
+  { name: 'Brussels Sprouts', indoors: [0, 1], sow: 2, growEnd: 7 },
+  { name: 'Cabbage', indoors: [0, 1], sow: 2, growEnd: 7 },
+  { name: 'Broccoli', indoors: [1, 1], sow: 2, growEnd: 6 },
+  { name: 'Cauliflower', indoors: [1, 1], sow: 2, growEnd: 6 },
+  { name: 'Tuscan Kale', indoors: [1, 1], sow: 2, growEnd: 9, overwinter: true },
+  { name: 'Collard Greens', indoors: [1, 1], sow: 2, growEnd: 9, overwinter: true },
+  { name: 'Head Lettuce', indoors: null, sow: 3, growEnd: 6 },
+  { name: 'Leaf Lettuce', indoors: null, sow: 3, growEnd: 6 },
+  { name: 'Spinach', indoors: null, sow: 3, growEnd: 9, overwinter: true },
+  { name: 'Arugula', indoors: null, sow: 3, growEnd: 6 },
+  { name: 'Fennel (Florence)', indoors: [1, 1], sow: 2, growEnd: 5, note: 'Isolate in a container or a separate bed' },
+];
+
+function phases(c: Crop): Phase[] {
+  return MONTHS.map((_, i) => {
+    if (c.indoors && i >= c.indoors[0] && i <= c.indoors[1]) return 'indoors';
+    if (i === c.sow) return 'sow';
+    if (i > c.sow && i <= c.growEnd) return 'grow';
+    return 'none';
+  });
+}
+
+const hasNotes = crops.some((c) => c.note);
+---
+
+<figure class="timeline">
+  <figcaption>At a glance: when each crop is started, planted, and harvested across the season. Full varieties, maturity, and notes are in the table below.</figcaption>
+  <div class="tl-scroll">
+    <div class="tl-grid" style={`--cols:${MONTHS.length}`}>
+      <div class="tl-corner" aria-hidden="true"></div>
+      {MONTHS.map((m) => <div class="tl-month">{m}</div>)}
+      {crops.map((c) => {
+        const ph = phases(c);
+        return (
+          <Fragment>
+            <div class="tl-name">
+              {c.name}
+              {c.note && <abbr class="tl-flag" title={c.note}>*</abbr>}
+            </div>
+            {ph.map((p, i) => (
+              <div class={`tl-cell tl-${p}`}>
+                {c.overwinter && p === 'grow' && i === c.growEnd && (
+                  <span class="tl-arrow" aria-hidden="true">&rarr;</span>
+                )}
+              </div>
+            ))}
+          </Fragment>
+        );
+      })}
+    </div>
+  </div>
+  <ul class="tl-legend">
+    <li><span class="sw tl-indoors"></span> start seeds indoors</li>
+    <li><span class="sw tl-sow"></span> transplant or sow</li>
+    <li><span class="sw tl-grow"></span> growing and harvest</li>
+    <li><span class="tl-arrow">&rarr;</span> overwinters into spring</li>
+  </ul>
+  {hasNotes && <p class="tl-foot">* Fennel must be isolated from this bed. See the <a href="../bed-layout/">bed layout</a> for why.</p>}
+</figure>
+
+<style>
+  .timeline {
+    margin: 1.5rem 0 2rem;
+  }
+  .timeline figcaption {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #4a4f43;
+    margin-bottom: 0.75rem;
+  }
+  .tl-scroll {
+    overflow-x: auto;
+  }
+  .tl-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, 1.4fr) repeat(var(--cols), minmax(30px, 1fr));
+    gap: 3px;
+    min-width: 540px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.78rem;
+  }
+  .tl-corner {
+    background: transparent;
+  }
+  .tl-month {
+    text-align: center;
+    font-weight: 700;
+    color: var(--leaf-dark);
+    padding-bottom: 0.25rem;
+  }
+  .tl-name {
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .tl-flag {
+    color: #b4541f;
+    text-decoration: none;
+    cursor: help;
+    margin-left: 0.15rem;
+  }
+  .tl-cell {
+    min-height: 26px;
+    border-radius: 3px;
+    background: #eceee3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .tl-indoors {
+    background-color: #dfe7d2;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--leaf) 0 2px,
+      transparent 2px 6px
+    );
+  }
+  .tl-sow {
+    background: #9cbf8f;
+  }
+  .tl-grow {
+    background: var(--leaf);
+  }
+  .tl-arrow {
+    color: var(--leaf-dark);
+    font-weight: 700;
+    padding-right: 2px;
+  }
+  .tl-cell .tl-arrow {
+    color: #fff;
+  }
+  .tl-legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+    padding: 0.85rem 0 0;
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #4a4f43;
+  }
+  .tl-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .tl-legend .sw {
+    width: 22px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  .tl-foot {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: #4a4f43;
+    margin: 0.6rem 0 0;
+  }
+</style>

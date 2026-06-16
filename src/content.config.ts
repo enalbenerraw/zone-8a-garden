@@ -9,6 +9,7 @@ const guides = defineCollection({
     order: z.number(),
     category: z.enum(['Plan', 'Plant', 'Protect']),
     updated: z.string(),
+    timeline: z.boolean().optional(),
   }),
 });
 

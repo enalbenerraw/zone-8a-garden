@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PlantingTimeline from '../../components/PlantingTimeline.astro';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -19,5 +20,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <p><a href={`${base}/#guides`}>&larr; All guides</a></p>
   <h1>{guide.data.title}</h1>
   <p><em>Updated {guide.data.updated}</em></p>
+  {guide.data.timeline && <PlantingTimeline />}
   <Content />
 </Base>
