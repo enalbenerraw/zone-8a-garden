@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+
+const entries = (await getCollection('journal')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base
+  title="Garden Journal"
+  description="A dated photo log of the Zone 8a garden through the seasons."
+>
+  <p><a href={`${base}/`}>&larr; Home</a></p>
+  <h1>Garden journal</h1>
+  <p>
+    A dated photo log of the garden through the seasons: the rotation bed
+    running spinach to beans to brassicas, plus the asparagus, corn, tomatoes,
+    and the rest as they come and go.
+  </p>
+
+  <ul class="entries">
+    {entries.map((entry) => (
+      <li>
+        <a href={`${base}/journal/${entry.id}/`}>
+          <Image
+            src={entry.data.photos[0].src}
+            alt={entry.data.photos[0].alt}
+            widths={[160, 320]}
+            sizes="120px"
+          />
+          <span>
+            <strong>{entry.data.title}</strong>
+            <em>{entry.data.phase} &middot; {fmt(entry.data.date)}</em>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .entries {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .entries a {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  .entries :global(img) {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    flex: none;
+  }
+  .entries span {
+    display: flex;
+    flex-direction: column;
+  }
+  .entries strong {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    color: var(--leaf-dark);
+  }
+  .entries em {
+    font-size: 0.85rem;
+    color: #6b6f63;
+  }
+</style>

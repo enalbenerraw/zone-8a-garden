@@ -28,6 +28,8 @@ The bed runs in three tiers from north to south. Tall, hungry crops anchor the n
 
 > **Fennel isolation mandate.** Do not place fennel anywhere inside this 4x8 layout. Florence fennel is allelopathic to brassicas and will stunt them, and it will cross with your dill. Grow it in a container or a dedicated separate bed, never in the matrix.
 
+See the [garden journal](../../journal/) for dated photos of the beds as they fill in across the seasons.
+
 This is the single placement rule that has no exceptions. Everything else in the layout can flex; fennel cannot share the bed.
 
 See the [companion planting rules](../companion-planting/) for the logic behind each pairing.
