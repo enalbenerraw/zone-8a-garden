@@ -45,4 +45,14 @@ const journal = defineCollection({
     }),
 });
 
-export const collections = { guides, journal };
+// Dated log of changes to the site itself: new guides, content updates,
+// infrastructure work. One entry per change, body holds the detail.
+const changelog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/changelog' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+  }),
+});
+
+export const collections = { guides, journal, changelog };

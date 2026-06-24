@@ -1,0 +1,72 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const entries = (await getCollection('changelog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+// Render each entry's markdown body, keep them in newest-first order.
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content }))
+);
+
+// Group by day so the page reads as a dated log.
+const byDate = new Map<string, typeof rendered>();
+for (const item of rendered) {
+  const key = item.entry.data.date.toISOString().slice(0, 10);
+  byDate.set(key, [...(byDate.get(key) ?? []), item]);
+}
+const groups = [...byDate.entries()];
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+
+<Base
+  title="Changelog"
+  description="A dated log of what has changed on the Zone 8a Garden site."
+>
+  <p><a href={`${base}/`}>&larr; Home</a></p>
+  <h1>Changelog</h1>
+  <p>What has changed on the site, newest first. New guides, content updates, and behind-the-scenes work.</p>
+
+  {groups.map(([key, items]) => (
+    <section class="day">
+      <h2>{fmt(items[0].entry.data.date)}</h2>
+      {items.map(({ entry, Content }) => (
+        <article class="change">
+          <h3>{entry.data.title}</h3>
+          <Content />
+        </article>
+      ))}
+    </section>
+  ))}
+</Base>
+
+<style>
+  .day {
+    border-top: 1px solid var(--line);
+    padding-top: 1.25rem;
+    margin-top: 2rem;
+  }
+  .day h2 {
+    font-size: 1rem;
+    color: #6b6f63;
+    margin: 0 0 0.75rem;
+  }
+  .change {
+    margin: 0 0 1.5rem;
+  }
+  .change:last-child {
+    margin-bottom: 0;
+  }
+  .change h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.15rem;
+  }
+  .change :global(p) {
+    margin: 0.25rem 0 0;
+  }
+</style>
