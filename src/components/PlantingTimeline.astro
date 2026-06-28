@@ -10,23 +10,27 @@ interface Crop {
   note?: string;
 }
 
-// Month axis, index 0 = June through index 9 = March.
-const MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'];
+// Month axis, index 0 = January through index 11 = December.
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-// Derived from the planting calendar: when seeds start indoors, when the crop
-// goes in the ground, and how far into the cold it keeps producing.
+// Derived from the year-round planting calendar: when seeds start indoors, when
+// the crop goes in the ground, and how far it keeps producing. A representative
+// slice across all four seasons; the full crop list lives in the table below.
 const crops: Crop[] = [
-  { name: 'Brussels Sprouts', indoors: [0, 1], sow: 2, growEnd: 7 },
-  { name: 'Cabbage', indoors: [0, 1], sow: 2, growEnd: 7 },
-  { name: 'Broccoli', indoors: [1, 1], sow: 2, growEnd: 6 },
-  { name: 'Cauliflower', indoors: [1, 1], sow: 2, growEnd: 6 },
-  { name: 'Tuscan Kale', indoors: [1, 1], sow: 2, growEnd: 9, overwinter: true },
-  { name: 'Collard Greens', indoors: [1, 1], sow: 2, growEnd: 9, overwinter: true },
-  { name: 'Head Lettuce', indoors: null, sow: 3, growEnd: 6 },
-  { name: 'Leaf Lettuce', indoors: null, sow: 3, growEnd: 6 },
-  { name: 'Spinach', indoors: null, sow: 3, growEnd: 9, overwinter: true },
-  { name: 'Arugula', indoors: null, sow: 3, growEnd: 6 },
-  { name: 'Fennel (Florence)', indoors: [1, 1], sow: 2, growEnd: 5, note: 'Isolate in a container or a separate bed' },
+  { name: 'Peas', indoors: null, sow: 2, growEnd: 5 },
+  { name: 'Spinach (spring)', indoors: null, sow: 2, growEnd: 4 },
+  { name: 'Lettuce (spring)', indoors: null, sow: 2, growEnd: 4 },
+  { name: 'Tomatoes', indoors: [1, 1], sow: 3, growEnd: 7 },
+  { name: 'Summer Squash', indoors: null, sow: 3, growEnd: 6 },
+  { name: 'Bush Beans', indoors: null, sow: 5, growEnd: 7 },
+  { name: 'Okra', indoors: null, sow: 4, growEnd: 8 },
+  { name: 'Broccoli', indoors: [6, 6], sow: 7, growEnd: 11 },
+  { name: 'Cabbage', indoors: [5, 6], sow: 7, growEnd: 11 },
+  { name: 'Tuscan Kale', indoors: [6, 6], sow: 7, growEnd: 11, overwinter: true },
+  { name: 'Collard Greens', indoors: [6, 6], sow: 7, growEnd: 11, overwinter: true },
+  { name: 'Lettuce (fall)', indoors: null, sow: 8, growEnd: 11 },
+  { name: 'Spinach (fall)', indoors: null, sow: 8, growEnd: 11, overwinter: true },
+  { name: 'Fennel (Florence)', indoors: [6, 6], sow: 7, growEnd: 10, note: 'Isolate in a container or a separate bed' },
 ];
 
 function phases(c: Crop): Phase[] {
@@ -42,7 +46,7 @@ const hasNotes = crops.some((c) => c.note);
 ---
 
 <figure class="timeline">
-  <figcaption>At a glance: when each crop is started, planted, and harvested across the season. Full varieties, maturity, and notes are in the table below.</figcaption>
+  <figcaption>At a glance: when each crop is started, planted, and harvested across the year. Full varieties, maturity, and notes are in the table below.</figcaption>
   <div class="tl-scroll">
     <div class="tl-grid" style={`--cols:${MONTHS.length}`}>
       <div class="tl-corner" aria-hidden="true"></div>
@@ -93,7 +97,7 @@ const hasNotes = crops.some((c) => c.note);
     display: grid;
     grid-template-columns: minmax(120px, 1.4fr) repeat(var(--cols), minmax(30px, 1fr));
     gap: 3px;
-    min-width: 540px;
+    min-width: 680px;
     font-family: ui-sans-serif, system-ui, sans-serif;
     font-size: 0.78rem;
   }

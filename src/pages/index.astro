@@ -9,21 +9,25 @@ const categories = ['Plan', 'Plant', 'Protect'] as const;
 const blurbs: Record<(typeof categories)[number], string> = {
   Plan: 'Decide what goes where, and when.',
   Plant: 'Put crops in the ground and hand the bed off cleanly.',
-  Protect: 'Keep the brassicas through the pest window and into winter.',
+  Protect: 'Keep crops healthy from the spring pests through the winter brassica window.',
 };
 ---
 
-<Base title="Zone 8a Garden: Fall and Winter Growing Guide">
-  <h1>A Zone 8a fall garden that works all winter</h1>
+<Base title="Zone 8a Garden: A Year-Round Growing Guide">
+  <h1>A Zone 8a garden that works all year</h1>
   <p>
-    One raised bed, three crops a year: spring spinach, summer nitrogen-fixing
-    beans, then fall and winter brassicas. These guides document the full
-    rotation, from the planting calendar to the pest plan, for USDA Zone 8a.
+    One raised bed, run as a relay: spring greens and peas, summer
+    nitrogen-fixing beans and warm-season crops, then the fall and winter
+    brassicas that mature into the cold. These guides document the full
+    year-round rotation, from the planting calendar to the pest plan, for USDA
+    Zone 8a.
   </p>
   <p>
-    New here? Start with the <a href={`${base}/launch/`}>launch summary</a> for the
-    whole project in one read, or follow the <a href={`${base}/journal/`}>garden journal</a>
-    for dated photos through the seasons.
+    Garden somewhere else? The <a href={`${base}/kit/`}>Zone-Smart Garden Prompt
+    Kit</a> rebuilds this whole calendar for your own USDA zone. Or start with the
+    <a href={`${base}/launch/`}>launch summary</a> for the project in one read, or
+    the <a href={`${base}/journal/`}>garden journal</a> for dated photos through the
+    seasons.
   </p>
 
   <h2 id="guides">Guides</h2>

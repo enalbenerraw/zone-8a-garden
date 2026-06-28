@@ -1,16 +1,26 @@
 ---
-title: Integrated Pest Management for the Brassica Window
-description: Row covers, a Bt spray schedule, trap crops, and a homemade insecticidal soap recipe for the August transplant phase, when brassica pests peak.
+title: Year-Round Integrated Pest Management
+description: An organic, layered pest plan across the Zone 8a year, spring greens to summer fruiting crops to the brassica window when pressure peaks, with a homemade insecticidal soap recipe and extension sources.
 order: 5
 category: Protect
-updated: "2026-06-16"
+updated: "2026-06-28"
 ---
 
-The riskiest moment in this rotation is the **August transplant window**. Young brassicas going into warm soil are exactly what cabbage moths, loopers, aphids, and flea beetles are looking for. The plan is preventative, layered, and set up before the transplants go in, not after the damage starts.
+Pest pressure runs all year in Zone 8a, but it is not even. Each season brings its own pests, and one moment stands above the rest: the **August brassica transplant window**, when young brassicas going into warm soil are exactly what cabbage moths, loopers, aphids, and flea beetles are looking for. The plan is the same in every season, preventative and layered, set up before the damage starts rather than after.
+
+## Pests by season
+
+| Season | Crops at risk | Main pests | First line of defense |
+|---|---|---|---|
+| Spring | Greens, radishes, brassica seedlings | Flea beetles, aphids, cutworms | Row cover on seedlings; trap crops; soap for aphids |
+| Summer | Beans, squash, tomatoes, peppers | Squash bugs, bean beetles, hornworms, aphids, spider mites | Handpicking, Bt for caterpillars, soap for soft-bodied pests |
+| Fall and winter | Brassicas | Cabbage moths and loopers, aphids, flea beetles | Row cover at transplant, weekly Bt, trap crops |
+
+The same four tools cover every row of that table: physical exclusion (row cover), a biological caterpillar control (Bt), trap crops and companions, and an insecticidal soap for soft-bodied pests. The sections below work through them at their hardest test, the brassica window, then note where each one carries into the other seasons.
 
 ## Layer 1: Row covers (physical exclusion)
 
-Floating row cover is the first and most reliable defense. Put it over the brassica beds **at transplant** and keep it on through establishment. It is a physical barrier: moths cannot land and lay eggs on what they cannot reach.
+Floating row cover is the first and most reliable defense. Put it over the brassica beds **at transplant** and keep it on through establishment. It is a physical barrier: moths cannot land and lay eggs on what they cannot reach. The same cover protects spring brassica seedlings and young greens from flea beetles; in summer it goes over squash and cucumbers until they flower, then comes off so bees can pollinate.
 
 - Use lightweight insect netting or spun-bonded row cover.
 - Secure the edges fully; a gap is an invitation.
@@ -26,6 +36,8 @@ For the caterpillars that get through, *Bacillus thuringiensis* (Bt) is a target
 - Spray late in the day; Bt breaks down in direct sunlight.
 - Reapply after rain, and rotate inspection with spraying so you are treating actual pressure, not spraying blind.
 - A dedicated **1-gallon pump sprayer** kept for this purpose keeps the weekly rhythm easy.
+
+The same Bt works on leaf-eating caterpillars all year: tomato hornworms in summer respond to it just as cabbageworms do in fall. Match the application to the pest you actually see, and keep handpicking large hornworms, which is faster than spraying for a few big caterpillars.
 
 ## Layer 3: Trap crops and companions (behavioral)
 
@@ -61,7 +73,9 @@ Extension services specifically warn against several popular home brews on food 
 
 When soap, row covers, and Bt are not enough, reach for a labeled, OMRI-listed product rather than a kitchen recipe.
 
-## Putting it on the calendar
+## Putting the brassica window on the calendar
+
+The fall brassica window is the peak, so it gets the tightest schedule. Spring and summer crops use the same toolkit on a lighter cadence: cover seedlings early, scout weekly, and reach for Bt or soap only when you see the pest.
 
 | Timing | Action |
 |---|---|

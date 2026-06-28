@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Live Gumroad product URLs.
+const CORE_KIT_URL = 'https://enerrawen.gumroad.com/l/epebep';
+const FREE_PROMPT_URL = 'https://enerrawen.gumroad.com/l/jmlwgi';
+---
+
+<Base
+  title="The Zone-Smart Garden Prompt Kit: AI Planting Plans for Your Exact Zone"
+  description="Five scaffolded AI prompts that build a full year of garden plans for your USDA zone: planting calendar, companion planting, organic fertilizing, pest management, and season-shift succession."
+>
+  <p><a href={`${base}/`}>&larr; Home</a></p>
+  <h1>The Zone-Smart Garden Prompt Kit</h1>
+  <p class="lead">
+    Five scaffolded AI prompts that build a full year of garden plans for your USDA zone:
+    planting calendar, companion planting, organic fertilizing, pest management, and the
+    spring-to-fall bed succession.
+  </p>
+
+  <div class="buy-box">
+    <p class="price"><span class="now">$9</span> <span class="was">$12</span> <span class="tag">launch price</span></p>
+    <a class="buy" href={CORE_KIT_URL} target="_blank" rel="noopener noreferrer">Get the kit on Gumroad &rarr;</a>
+    <p class="finehint">One-time purchase. Works in Claude, ChatGPT, or Gemini.</p>
+  </div>
+
+  <h2>Stop guessing what to plant and when</h2>
+  <p>
+    This whole site documents one Zone 8a bed in detail. The kit makes that system portable:
+    tell the AI your USDA hardiness zone and these five prompts rebuild the plan for where you
+    actually garden, holding the crop spacing that makes a relay bed work.
+  </p>
+
+  <h2>Inside the kit</h2>
+  <ol>
+    <li><strong>Annual Planting Calendar prompt.</strong> Month by month, keyed to your zone and your two frost dates.</li>
+    <li><strong>Companion Planting prompt.</strong> What to pair, what to keep apart, and why.</li>
+    <li><strong>Organic Fertilizing prompt.</strong> A feeding plan without synthetic inputs.</li>
+    <li><strong>Pest Management prompt.</strong> An integrated, low-spray defense.</li>
+    <li><strong>Season-Shift prompt.</strong> How to roll beds from spring to summer to fall.</li>
+  </ol>
+  <p>Plus a quick-start guide so your first plan comes out right.</p>
+
+  <h2>How it works</h2>
+  <ol>
+    <li>Copy a prompt and paste it into Claude, ChatGPT, or Gemini.</li>
+    <li>Type your USDA zone, and your beds if you want to get specific.</li>
+    <li>Get a plan written for your conditions, not a generic printout.</li>
+  </ol>
+
+  <h2>Try it free first</h2>
+  <p>
+    New here? Grab the <a href={FREE_PROMPT_URL} target="_blank" rel="noopener noreferrer">free
+    companion-planting prompt</a> and see how it works before you buy. You can also read the full
+    Zone 8a <a href={`${base}/guides/planting-calendar/`}>year-round planting calendar</a> free on
+    this site; the kit is what rebuilds it for your zone.
+  </p>
+
+  <h2>Why you can trust it</h2>
+  <p>
+    The Zone 8a calendar at the core of these prompts is a verified working plan. The fertilizing
+    and pest guidance is written to be checked, citing university extension and IPM publications,
+    and where a step is reconstructed from standard practice the prompts say so and tell you to
+    confirm against your local extension office. The prompts are built to flag any crop that will
+    not fit your season rather than hand you dates that quietly fail.
+  </p>
+
+  <div class="buy-box">
+    <a class="buy" href={CORE_KIT_URL} target="_blank" rel="noopener noreferrer">Get the kit on Gumroad &rarr;</a>
+    <p class="finehint">Launch price $9, regularly $12.</p>
+  </div>
+
+  <style>
+    .lead {
+      font-size: 1.15rem;
+      color: var(--leaf-dark);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    .buy-box {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .price {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      margin: 0 0 1rem;
+    }
+    .price .now { font-size: 2.25rem; font-weight: 700; color: var(--leaf-dark); }
+    .price .was { font-size: 1.25rem; color: #6b6f63; text-decoration: line-through; margin-left: 0.4rem; }
+    .price .tag {
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #b4541f;
+      vertical-align: middle;
+    }
+    .buy {
+      display: inline-block;
+      background: var(--leaf-dark);
+      color: #fff;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: 4px;
+    }
+    .buy:hover { background: var(--leaf); }
+    .finehint {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem;
+      color: #6b6f63;
+      margin: 0.85rem 0 0;
+    }
+  </style>
+</Base>

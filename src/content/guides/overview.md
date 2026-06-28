@@ -6,7 +6,7 @@ category: Plan
 updated: "2026-06-16"
 ---
 
-USDA Zone 8a gives you a long, forgiving shoulder season. The last frost lands in early spring and the first hard frost holds off until roughly **November 10**, which leaves enough runway to grow three crops in one bed across a single year. The trick is treating the bed as a relay, not a single planting.
+USDA Zone 8a gives you a long, forgiving shoulder season. The last frost lands in late March, around March 27 on recent averages, and the first hard frost holds off until roughly **November 10**, which leaves enough runway to grow three crops in one bed across a single year. The trick is treating the bed as a relay, not a single planting.
 
 ## The relay
 
@@ -20,10 +20,11 @@ Each handoff matters. Spinach leaves the bed light on nitrogen. Beans put it bac
 
 ## What you will find here
 
-- A [master planting calendar](../planting-calendar/) with varieties, sowing dates, and harvest windows keyed to a November 10 frost date.
+- A [year-round planting calendar](../planting-calendar/) covering spring greens through summer crops to the winter brassicas, with every date keyed to two frost anchors so it travels to your zone.
 - A [polyculture bed layout](../bed-layout/) that stacks crops by height and light so a 4x8 bed does the work of a larger one.
 - The [succession and soil method](../succession-sequence/) for moving cleanly from one crop to the next.
-- An [integrated pest management plan](../pest-management/) for the August transplant window, when brassica pests are at their worst.
+- The [organic fertilizing plan](../organic-fertilizing/) for feeding a hard-working bed across the year without synthetic fertilizer.
+- A [year-round pest management plan](../pest-management/), built around the August brassica window when pressure is at its worst.
 - The [companion planting rules](../companion-planting/) that hold the layout together, including the one isolation rule you cannot skip.
 
 Adjust the dates to your own microclimate. Everything else travels.
