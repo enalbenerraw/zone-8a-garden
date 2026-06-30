@@ -4,7 +4,7 @@ interface Props {
   description?: string;
   image?: string;
 }
-const { title, description = 'A practical Zone 8a fall and winter gardening guide.', image = '/og-zone8a.png' } = Astro.props;
+const { title, description = 'A practical year-round gardening guide for USDA Zone 8a.', image = '/og-zone8a.png' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteUrl = Astro.site ?? new URL('https://zone8a.com');
 const pageUrl = new URL(Astro.url.pathname, siteUrl);
@@ -30,7 +30,7 @@ const CONTACT_FORM_URL = 'https://forms.gle/3kBb9hAvTVyQC96N6';
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
-    <meta property="og:image:alt" content="Zone 8a Garden: one raised bed run as a relay, spring spinach to summer beans to fall and winter brassicas." />
+    <meta property="og:image:alt" content="Zone 8a Garden: one raised bed run all year, spring spinach to summer beans to fall and winter brassicas." />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
