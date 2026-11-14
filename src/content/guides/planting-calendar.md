@@ -3,7 +3,7 @@ title: Year-Round Master Planting Calendar
 description: A full twelve-month Zone 8a calendar, spring greens through summer fruiting crops to the winter brassica finish, with every date anchored to your two frost dates.
 order: 2
 category: Plan
-updated: "2026-06-28"
+updated: "2026-11-14"
 timeline: true
 ---
 
@@ -61,17 +61,17 @@ This is the part the bed is built around. Brassicas start indoors in summer heat
 
 | Crop | Variety | Start indoors | Transplant or direct sow | Days to maturity | Harvest window | Placement and notes |
 |---|---|---|---|---|---|---|
-| Brussels Sprouts | Long Island Improved | 2026-06-27 | 2026-08-08 | 90 to 110 | November to January | North anchor layer |
-| Cabbage | Late Flat Dutch | 2026-06-27 | 2026-08-08 | 85 to 100 | November to January | Heavy feeder; monitor for worms |
-| Broccoli | Waltham 29 | 2026-07-04 | 2026-08-15 | 60 to 75 | October to December | North anchor; needs solid afternoon sun |
-| Cauliflower | Snowball Y | 2026-07-04 | 2026-08-15 | 70 to 85 | October to December | Tie leaves over heads to blanch if needed |
-| Tuscan Kale | Lacinato (Dino) | 2026-07-11 | 2026-08-22 | 60 | October through winter | Flavor sweetens significantly after frost |
-| Collard Greens | Georgia Southern | 2026-07-11 | 2026-08-22 | 75 | October through winter | Cold-tolerant classic Zone 8a crop |
-| Head Lettuce | Buttercrunch | N/A | 2026-09-05 | 50 to 60 | October to December | Mid-bed; benefits from light shade canopy |
-| Leaf Lettuce | Salad Bowl Green | N/A | 2026-09-05 | 45 | October to December | Cut-and-come-again; harvest continually |
-| Spinach | Bloomsdale Long Standing | N/A | 2026-09-19 | 45 | October into spring | South border; overwinters, exceptional cold hardiness |
-| Arugula | Astro | N/A | 2026-09-19 | 35 | October to December | Fast crop; succession sow every 2 weeks |
-| Fennel (Florence) | Perfection | 2026-07-25 | 2026-08-22 | 80 | October to November | Isolate in a container or a dedicated separate bed |
+| Brussels Sprouts | Long Island Improved | June 27 | August 8 | 90 to 110 | November to January | North anchor layer |
+| Cabbage | Late Flat Dutch | June 27 | August 8 | 85 to 100 | November to January | Heavy feeder; monitor for worms |
+| Broccoli | Waltham 29 | July 4 | August 15 | 60 to 75 | October to December | North anchor; needs solid afternoon sun |
+| Cauliflower | Snowball Y | July 4 | August 15 | 70 to 85 | October to December | Tie leaves over heads to blanch if needed |
+| Tuscan Kale | Lacinato (Dino) | July 11 | August 22 | 60 | October through winter | Flavor sweetens significantly after frost |
+| Collard Greens | Georgia Southern | July 11 | August 22 | 75 | October through winter | Cold-tolerant classic Zone 8a crop |
+| Head Lettuce | Buttercrunch | N/A | September 5 | 50 to 60 | October to December | Mid-bed; benefits from light shade canopy |
+| Leaf Lettuce | Salad Bowl Green | N/A | September 5 | 45 | October to December | Cut-and-come-again; harvest continually |
+| Spinach | Bloomsdale Long Standing | N/A | September 19 | 45 | October into spring | South border; overwinters, exceptional cold hardiness |
+| Arugula | Astro | N/A | September 19 | 35 | October to December | Fast crop; succession sow every 2 weeks |
+| Fennel (Florence) | Perfection | July 25 | August 22 | 80 | October to November | Isolate in a container or a dedicated separate bed |
 
 ## How to read it
 
