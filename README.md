@@ -4,7 +4,7 @@ A practical year-round gardening guide for USDA Zone 8a, built as a static site 
 
 ## Content
 
-There are two content collections, both defined in `src/content.config.ts` via the glob loader.
+There are three content collections, all defined in `src/content.config.ts` via the glob loader.
 
 **Guides** live in `src/content/guides/` as Markdown with frontmatter (`title`, `description`, `order`, `category`, `updated`, an optional `timeline` flag, and an optional `hero`). Ordering comes from `order`, not the filename; categories are `Plan`, `Plant`, and `Protect`. Add a guide by dropping a new `.md` file in that folder.
 
@@ -17,12 +17,21 @@ There are two content collections, both defined in `src/content.config.ts` via t
 | The organic fertilizing plan | Plant |
 | Year-round integrated pest management | Protect |
 | Companion planting rules | Protect |
+| Winter protection for the brassica bed | Protect |
 
 **Journal** entries live in `src/content/journal/` as dated Markdown with frontmatter (`title`, `phase`, `date`, and a non-empty `photos` array). Each entry's body is the narrative; the captioned gallery renders from `photos`. The index lists entries newest-first.
+
+**Changelog** entries live in `src/content/changelog/` as dated Markdown (`title`, `date`), one per change to the site itself, and render at `/changelog/`.
 
 ### Photos
 
 Photos live in `src/content/**/_photos/` and are referenced relatively (for example `./_photos/foo.png`), never in `public/`. The `src` fields use Astro's content-collection `image()` helper, so images are optimized at build into responsive WebP. Putting an image in `public/` skips that pipeline and ships the full-size original.
+
+The home page banner rotates through the `heroes` list in `src/pages/index.astro`, one random photo per visit. To add one, put the photo in `src/content/journal/_photos/`, import it, and add a `{ src, alt, position }` line. Each photo sits in a `<template>`, so only the one shown is downloaded.
+
+### Social card
+
+The link preview for LinkedIn, X, and Facebook is `public/og-zone8a-v2.png`, rendered from `design/og-card.html` (the render steps are in that file's header comment). When the card changes, bump the version in the file name and in `src/layouts/Base.astro`, because those platforms cache cards by URL.
 
 ### Provenance
 
@@ -33,6 +42,8 @@ The planting calendar and bed layout are ported from a verified source document.
 The site funnels to a paid product, the **Zone-Smart Garden Prompt Kit**: a set of scaffolded AI prompts that rebuild the year-round calendar for any USDA zone. The store page is `src/pages/kit.astro` (served at `/kit/`). The product files themselves, the prompts and PDFs sold on Gumroad, are kept out of this public repo. They live in a local `kit/` directory that `.gitignore` excludes, so cloning the repo gives you the site, not the saleable artifacts.
 
 ## Develop
+
+Requires Node 22.23.4 or later (Astro 7); `.node-version` pins Node 22 for Cloudflare builds.
 
 ```sh
 npm install
