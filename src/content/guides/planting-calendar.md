@@ -77,7 +77,7 @@ This is the part the bed is built around. Brassicas start indoors in summer heat
 
 - **Start indoors** crops (brassicas, tomatoes, peppers, fennel) need a head start so they go out as stocky seedlings instead of seed. Start them under cover and keep them watered.
 - **Direct-sow** crops (greens, roots, beans, squash) go straight into the bed when the table says, spring crops into cool soil and summer crops into warm.
-- The **harvest windows** overlap on purpose. Planned this way, the bed produces something to cut almost every week of the year, and the brassicas and kale carry the hardest part of winter.
+- The **harvest windows** overlap on purpose. Planned this way, the bed produces something to cut almost every week of the year, and the brassicas and kale carry the hardest part of winter. The [winter protection guide](../winter-protection/) covers what each one can take on a hard-freeze night.
 
 ## A note on sourcing
 
